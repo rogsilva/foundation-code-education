@@ -7,21 +7,21 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="index.php">Meu Site</a>
+                <a class="navbar-brand" href="/home">Meu Site</a>
             </div>
 
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse navbar-ex1-collapse">
                 <ul class="nav navbar-nav">
-                    <li><a href="index.php">Home</a>
+                    <li><a href="/home">Home</a>
                     </li>
-                    <li><a href="?page=empresa">Empresa</a>
+                    <li><a href="/empresa">Empresa</a>
                     </li>
-                    <li><a href="?page=produtos">Produtos</a>
+                    <li><a href="/produtos">Produtos</a>
                     </li>
-                    <li><a href="?page=servicos">Serviços</a>
+                    <li><a href="/servicos">Serviços</a>
                     </li>
-                    <li><a href="?page=contato">Contato</a>
+                    <li><a href="/contato">Contato</a>
                     </li>
                 </ul>
             </div>

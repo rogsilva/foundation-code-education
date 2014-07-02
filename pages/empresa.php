@@ -2,7 +2,7 @@
 
 
 <p class="text-justify">
-    <img class="img-responsive pull-left" src="images/empresa.png" alt="empresa"/>
+    <img class="img-responsive pull-left" src="<?php echo "http://".$_SERVER['HTTP_HOST']?>/images/empresa.png" alt="empresa"/>
     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ut molestie lacus. Nullam auctor vestibulum vestibulum. Cras ullamcorper dapibus mi, et molestie 
     diam. Donec lobortis fermentum eros sed rutrum. In hendrerit elit libero, vitae imperdiet orci placerat quis. Nullam accumsan odio sit amet est consequat, a 
     viverra enim mattis. Suspendisse neque nisi, aliquam id nisi a, ultrices consequat felis. Nulla vitae enim magna. Class aptent taciti sociosqu ad litora torquent 

@@ -1,1 +1,1 @@
-<h1 class="page-header">Opss! Página não encontrada!</h1>
+<h1 class="page-header">Opss! Página não encontrada! 404</h1>
