@@ -13,13 +13,20 @@ function segment ($route){
 $route = parse_url("http://".$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI']);
 $segment = segment($route);
 
+$arrayRoutes = array(
+    'home',
+    'contato',
+    'empresa',
+    'produtos',
+    'servicos'
+);
 
 
 include_once 'includes/head.php';
 include_once 'includes/navbar.php';
 
 if($segment[0] != ''){
-    if (file_exists("pages/{$segment[0]}.php")){
+    if (file_exists("pages/{$segment[0]}.php") && in_array($segment[0], $arrayRoutes)){
         include_once "pages/{$segment[0]}.php";
     } else {
         include_once 'pages/ops.php';
