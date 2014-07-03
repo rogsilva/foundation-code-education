@@ -4,7 +4,7 @@
         
         <div class="col-sm-8">
             <p>Entre em contato conosco através do formulário abaixo.</p>
-                <form role="form" method="POST" action="?page=contato">
+                <form role="form" method="POST" action="/contato">
 	            <div class="row">
                         <div class="form-group col-lg-6">
                           <label for="input1">Nome</label>
