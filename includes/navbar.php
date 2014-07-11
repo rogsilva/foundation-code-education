@@ -24,8 +24,23 @@
                     <li><a href="/contato">Contato</a>
                     </li>
                 </ul>
+                <div class="pull-right" style="margin-top: 8px;">
+                    <form action="/busca" method="post" class="form-inline" role="form">
+                        <div class="form-group">
+                            <div class="input-group">
+                                <input class="form-control" name="busca" type="text" placeholder="">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="input-group">
+                                <input class="form-control" type="submit" value="Buscar">
+                            </div>
+                        </div>
+                    </form>
+                </div>
             </div>
             <!-- /.navbar-collapse -->
+
         </div>
         <!-- /.container -->
     </nav>

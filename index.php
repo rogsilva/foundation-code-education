@@ -1,33 +1,27 @@
 <?php
+ini_set('display_errors', 'on');
 
-function segment ($route){
-    $path = explode('/', $route['path']);
-    if($path[0] == '')
-        unset($path[0]);
+include_once "includes/functions.php";
 
-    $segments = array_values($path);
-    return $segments;
-}
-
-
-$route = parse_url("http://".$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI']);
-$segment = segment($route);
 
 $arrayRoutes = array(
     'home',
     'contato',
     'empresa',
+    'produto',
     'produtos',
-    'servicos'
+    'servico',
+    'servicos',
+    'busca'
 );
 
 
 include_once 'includes/head.php';
 include_once 'includes/navbar.php';
 
-if($segment[0] != ''){
-    if (file_exists("pages/{$segment[0]}.php") && in_array($segment[0], $arrayRoutes)){
-        include_once "pages/{$segment[0]}.php";
+if( segment(0) != '' ){
+    if (file_exists("pages/" . segment(0) . ".php") && in_array( segment(0), $arrayRoutes )){
+        include_once "pages/" . segment(0) . ".php";
     } else {
         include_once 'pages/ops.php';
         header("HTTP/1.0 404 Not Found");
