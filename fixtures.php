@@ -1,33 +1,34 @@
 <?php
-
+include_once "includes/pdo.php";
 
 function createFixtures(\PDO $conexao){
 
     try{
-        $stmt = $conexao->prepare(' CREATE TABLE IF NOT EXISTS foundation.produtos (
+        $stmt = $conexao->prepare(' CREATE TABLE IF NOT EXISTS produtos (
                                     id INT NOT NULL AUTO_INCREMENT,
                                     nome VARCHAR(100) NOT NULL,
                                     descricao TEXT NOT NULL,
                                     PRIMARY KEY (id))');
         $stmt->execute();
 
-        $stmt = $conexao->prepare(' CREATE TABLE IF NOT EXISTS foundation.servicos (
+        $stmt = $conexao->prepare(' CREATE TABLE IF NOT EXISTS servicos (
                                     id INT NOT NULL AUTO_INCREMENT,
                                     nome VARCHAR(100) NOT NULL,
                                     descricao TEXT NOT NULL,
                                     PRIMARY KEY (id))');
         $stmt->execute();
 
+        $stmt = $conexao->prepare(' CREATE TABLE IF NOT EXISTS usuarios (
+                                    id INT NOT NULL AUTO_INCREMENT,
+                                    username VARCHAR(20) NOT NULL,
+                                    password VARCHAR(255) NOT NULL,
+                                    PRIMARY KEY (id),
+                                    UNIQUE INDEX username_UNIQUE (username ASC))');
+        $stmt->execute();
 
-        for($i = 1; $i <= 10; $i++){
-
-            $stmt = $conexao->prepare("INSERT INTO produtos (nome, descricao) VALUES ('Produto $i', 'Descrição do produto $i')");
-            $stmt->execute();
-
-            $stmt = $conexao->prepare("INSERT INTO servicos (nome, descricao) VALUES ('Serviço $i', 'Descrição do serviço $i')");
-            $stmt->execute();
-
-        }
+        $pass = 'code@foundation';
+        $password = password_hash($pass, PASSWORD_DEFAULT);
+        $conexao->exec("INSERT INTO usuarios (username, password) VALUES ('admin', '$password')");
 
 
         return true;
@@ -50,3 +51,8 @@ function deleteFixtures(\PDO $conexao){
         die("Erro: ". $e->getMessage());
     }
 }
+
+
+createFixtures($conexao);
+
+print '<a href="/home">Voltar ao site</a>';

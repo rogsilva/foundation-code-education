@@ -7,5 +7,5 @@ function segment ($number){
         unset($path[0]);
 
     $segments = array_values($path);
-    return $segments[$number];
+    return (!isset($segments[$number])) ? null : $segments[$number];
 }

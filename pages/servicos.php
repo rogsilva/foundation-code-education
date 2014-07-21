@@ -1,8 +1,6 @@
 <?php
     include_once "./includes/pdo.php";
-    include_once "./includes/fixtures.php";
 
-    createFixtures($conexao);
 
     $stmt = $conexao->prepare("SELECT * FROM servicos");
     $stmt->execute();
@@ -23,7 +21,7 @@
                         ";
     }
 
-    deleteFixtures($conexao);
+
     $conexao = null;
 ?>
 

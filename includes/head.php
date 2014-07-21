@@ -14,6 +14,10 @@
 
     <!-- Custom CSS for Template -->
     <link href="<?php echo "http://".$_SERVER['HTTP_HOST']?>/css/custom.css" rel="stylesheet">
+
+    <!-- JavaScript -->
+    <script src="<?php echo "http://".$_SERVER['HTTP_HOST']?>/js/jquery-1.10.2.js"></script>
+    <script src="<?php echo "http://".$_SERVER['HTTP_HOST']?>/js/bootstrap.js"></script>
 </head>
 
 <body>
